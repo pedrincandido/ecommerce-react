@@ -22,14 +22,14 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 
 /***/ "webpack/container/reference/checkout":
 /*!****************************************************************!*\
-  !*** external "checkout@http://localhost:3001/remoteEntry.js" ***!
+  !*** external "checkout@http://localhost:3010/remoteEntry.js" ***!
   \****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var __webpack_error__ = new Error();
 module.exports = new Promise((resolve, reject) => {
 	if(typeof checkout !== "undefined") return resolve();
-	__webpack_require__.l("http://localhost:3001/remoteEntry.js", (event) => {
+	__webpack_require__.l("http://localhost:3010/remoteEntry.js", (event) => {
 		if(typeof checkout !== "undefined") return resolve();
 		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 		var realSrc = event && event.target && event.target.src;
@@ -40,29 +40,6 @@ module.exports = new Promise((resolve, reject) => {
 		reject(__webpack_error__);
 	}, "checkout");
 }).then(() => (checkout));
-
-/***/ }),
-
-/***/ "webpack/container/reference/search":
-/*!**************************************************************!*\
-  !*** external "search@http://localhost:3002/remoteEntry.js" ***!
-  \**************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var __webpack_error__ = new Error();
-module.exports = new Promise((resolve, reject) => {
-	if(typeof search !== "undefined") return resolve();
-	__webpack_require__.l("http://localhost:3002/remoteEntry.js", (event) => {
-		if(typeof search !== "undefined") return resolve();
-		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
-		var realSrc = event && event.target && event.target.src;
-		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
-		__webpack_error__.name = 'ScriptExternalLoadError';
-		__webpack_error__.type = errorType;
-		__webpack_error__.request = realSrc;
-		reject(__webpack_error__);
-	}, "search");
-}).then(() => (search));
 
 /***/ })
 
@@ -111,6 +88,36 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -235,20 +242,22 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 	(() => {
 /******/ 		var chunkMapping = {
 /******/ 			"src_bootstrap_tsx": [
-/******/ 				"webpack/container/remote/checkout/routers",
-/******/ 				"webpack/container/remote/search/routers"
+/******/ 				"webpack/container/remote/checkout/store"
+/******/ 			],
+/******/ 			"webpack_container_remote_checkout_ShoppingCart": [
+/******/ 				"webpack/container/remote/checkout/ShoppingCart"
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
-/******/ 			"webpack/container/remote/checkout/routers": [
+/******/ 			"webpack/container/remote/checkout/store": [
 /******/ 				"default",
-/******/ 				"./routers",
+/******/ 				"./store",
 /******/ 				"webpack/container/reference/checkout"
 /******/ 			],
-/******/ 			"webpack/container/remote/search/routers": [
+/******/ 			"webpack/container/remote/checkout/ShoppingCart": [
 /******/ 				"default",
-/******/ 				"./routers",
-/******/ 				"webpack/container/reference/search"
+/******/ 				"./ShoppingCart",
+/******/ 				"webpack/container/reference/checkout"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
@@ -338,10 +347,10 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			switch(name) {
 /******/ 				case "default": {
 /******/ 					register("react-dom", "18.2.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-dom/index.js */ "../../node_modules/react-dom/index.js"))))));
+/******/ 					register("react-redux", "9.0.4", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-redux_dist_react-redux_mjs"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-redux/dist/react-redux.mjs */ "../../node_modules/react-redux/dist/react-redux.mjs"))))));
 /******/ 					register("react-router-dom", "6.21.1", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-router-dom_dist_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-router-dom/dist/index.js */ "../../node_modules/react-router-dom/dist/index.js"))))));
 /******/ 					register("react", "18.2.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ../../node_modules/react/index.js */ "../../node_modules/react/index.js"))))));
 /******/ 					initExternal("webpack/container/reference/checkout");
-/******/ 					initExternal("webpack/container/reference/search");
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -513,7 +522,8 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersionCheckFallback("default", "react", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "../../node_modules/react/index.js"))))))),
 /******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadSingletonVersionCheckFallback("default", "react-dom", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "../../node_modules/react-dom/index.js"))))))),
-/******/ 			"webpack/sharing/consume/default/react-router-dom/react-router-dom": () => (loadStrictVersionCheckFallback("default", "react-router-dom", [4,6,21,1], () => (__webpack_require__.e("vendors-node_modules_react-router-dom_dist_index_js").then(() => (() => (__webpack_require__(/*! react-router-dom */ "../../node_modules/react-router-dom/dist/index.js")))))))
+/******/ 			"webpack/sharing/consume/default/react-router-dom/react-router-dom": () => (loadStrictVersionCheckFallback("default", "react-router-dom", [4,6,21,1], () => (__webpack_require__.e("vendors-node_modules_react-router-dom_dist_index_js").then(() => (() => (__webpack_require__(/*! react-router-dom */ "../../node_modules/react-router-dom/dist/index.js"))))))),
+/******/ 			"webpack/sharing/consume/default/react-redux/react-redux": () => (loadStrictVersionCheckFallback("default", "react-redux", [1,9,0,4], () => (__webpack_require__.e("vendors-node_modules_react-redux_dist_react-redux_mjs").then(() => (() => (__webpack_require__(/*! react-redux */ "../../node_modules/react-redux/dist/react-redux.mjs")))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
@@ -524,7 +534,8 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				"webpack/sharing/consume/default/react-dom/react-dom"
 /******/ 			],
 /******/ 			"src_bootstrap_tsx": [
-/******/ 				"webpack/sharing/consume/default/react-router-dom/react-router-dom"
+/******/ 				"webpack/sharing/consume/default/react-router-dom/react-router-dom",
+/******/ 				"webpack/sharing/consume/default/react-redux/react-redux"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -576,7 +587,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_sharing_consume_default_react(\-dom_react\-dom|_react)$/.test(chunkId)) {
+/******/ 						if(!/^webpack_(sharing_consume_default_react(\-dom_react\-dom|_react)|container_remote_checkout_ShoppingCart)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);

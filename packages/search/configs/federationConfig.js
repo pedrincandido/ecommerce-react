@@ -10,7 +10,7 @@ module.exports = {
   },
   exposes: {
     "./Search": "./src/components/SearchContent",
-    './routers': './src/routers',
+    './Routers': './src/Routers',
   },
   shared: {
     ...dependencies,

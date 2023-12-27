@@ -17,7 +17,7 @@ var checkout;
   \***********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-redux_react-redux\"), __webpack_require__.e(\"src_components_ShoppingCart_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/ShoppingCart */ \"./src/components/ShoppingCart.tsx\")))));\n\t},\n\t\"./store\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_store_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/store */ \"./src/store/store.ts\")))));\n\t},\n\t\"./cartSlice\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_cartSlice_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/cartSlice */ \"./src/store/cartSlice.ts\")))));\n\t},\n\t\"./routers\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-redux_react-redux\"), __webpack_require__.e(\"src_routers_index_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/routers */ \"./src/routers/index.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://checkout/container_entry?");
+eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-redux_react-redux\"), __webpack_require__.e(\"src_components_ShoppingCart_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/ShoppingCart */ \"./src/components/ShoppingCart.tsx\")))));\n\t},\n\t\"./store\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_store_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/store */ \"./src/store/store.ts\")))));\n\t},\n\t\"./cartSlice\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_cartSlice_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/cartSlice */ \"./src/store/cartSlice.ts\")))));\n\t},\n\t\"./Routers\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-redux_react-redux\"), __webpack_require__.e(\"src_Routers_index_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/Routers */ \"./src/Routers/index.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://checkout/container_entry?");
 
 /***/ })
 
@@ -214,55 +214,6 @@ eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/remotes loading */
-/******/ 	(() => {
-/******/ 		var chunkMapping = {};
-/******/ 		var idToExternalAndNameMapping = {};
-/******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
-/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
-/******/ 				chunkMapping[chunkId].forEach((id) => {
-/******/ 					var getScope = __webpack_require__.R;
-/******/ 					if(!getScope) getScope = [];
-/******/ 					var data = idToExternalAndNameMapping[id];
-/******/ 					if(getScope.indexOf(data) >= 0) return;
-/******/ 					getScope.push(data);
-/******/ 					if(data.p) return promises.push(data.p);
-/******/ 					var onError = (error) => {
-/******/ 						if(!error) error = new Error("Container missing");
-/******/ 						if(typeof error.message === "string")
-/******/ 							error.message += '\nwhile loading "' + data[1] + '" from ' + data[2];
-/******/ 						__webpack_require__.m[id] = () => {
-/******/ 							throw error;
-/******/ 						}
-/******/ 						data.p = 0;
-/******/ 					};
-/******/ 					var handleFunction = (fn, arg1, arg2, d, next, first) => {
-/******/ 						try {
-/******/ 							var promise = fn(arg1, arg2);
-/******/ 							if(promise && promise.then) {
-/******/ 								var p = promise.then((result) => (next(result, d)), onError);
-/******/ 								if(first) promises.push(data.p = p); else return p;
-/******/ 							} else {
-/******/ 								return next(promise, d, first);
-/******/ 							}
-/******/ 						} catch(error) {
-/******/ 							onError(error);
-/******/ 						}
-/******/ 					}
-/******/ 					var onExternal = (external, _, first) => (external ? handleFunction(__webpack_require__.I, data[0], 0, external, onInitialized, first) : onError());
-/******/ 					var onInitialized = (_, external, first) => (handleFunction(external.get, data[1], getScope, 0, onFactory, first));
-/******/ 					var onFactory = (factory) => {
-/******/ 						data.p = 1;
-/******/ 						__webpack_require__.m[id] = (module) => {
-/******/ 							module.exports = factory();
-/******/ 						}
-/******/ 					};
-/******/ 					handleFunction(__webpack_require__, data[2], 0, 0, onExternal, 1);
-/******/ 				});
-/******/ 			}
-/******/ 		}
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/sharing */

@@ -7,7 +7,17 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunkcheckout"] = self["webpackChunkcheckout"] || []).push([["src_routers_index_tsx"],{
+(self["webpackChunkcheckout"] = self["webpackChunkcheckout"] || []).push([["src_Routers_index_tsx"],{
+
+/***/ "./src/Routers/index.tsx":
+/*!*******************************!*\
+  !*** ./src/Routers/index.tsx ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"../../node_modules/react/jsx-runtime.js\");\n/* harmony import */ var _components_ShoppingCart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ShoppingCart */ \"./src/components/ShoppingCart.tsx\");\n\n\nconst Routers = () => {\n    return {\n        path: \"app-2\",\n        children: [{ path: \"\", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_ShoppingCart__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {}) }],\n    };\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Routers);\n\n\n//# sourceURL=webpack://checkout/./src/Routers/index.tsx?");
+
+/***/ }),
 
 /***/ "./src/components/ShoppingCart.tsx":
 /*!*****************************************!*\
@@ -16,16 +26,6 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"../../node_modules/react/jsx-runtime.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"webpack/sharing/consume/default/react-redux/react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _store_cartSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/cartSlice */ \"./src/store/cartSlice.ts\");\n\n\n\nconst ShoppingCart = () => {\n    const cart = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state) => state.cart.items);\n    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();\n    const handleAddItem = (item) => {\n        dispatch((0,_store_cartSlice__WEBPACK_IMPORTED_MODULE_2__.addItem)(item));\n    };\n    const handleRemoveItem = (itemId) => {\n        dispatch((0,_store_cartSlice__WEBPACK_IMPORTED_MODULE_2__.removeItem)({ id: itemId }));\n    };\n    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", { children: [cart.map((item) => ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"div\", { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"h3\", { children: item.title }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(\"p\", { children: [\"Quantity: \", item.quantity] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"button\", Object.assign({ onClick: () => handleRemoveItem(item.id) }, { children: \"Remove\" }))] }, item.id))), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"button\", Object.assign({ onClick: () => handleAddItem({ id: \"new\", title: \"New Item\", price: 100, quantity: 1 }) }, { children: \"Add New Item\" }))] }));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ShoppingCart);\n\n\n//# sourceURL=webpack://checkout/./src/components/ShoppingCart.tsx?");
-
-/***/ }),
-
-/***/ "./src/routers/index.tsx":
-/*!*******************************!*\
-  !*** ./src/routers/index.tsx ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"../../node_modules/react/jsx-runtime.js\");\n/* harmony import */ var _components_ShoppingCart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ShoppingCart */ \"./src/components/ShoppingCart.tsx\");\n\n\nconst Routers = () => {\n    return {\n        path: \"checkout\",\n        children: [{ path: \"\", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components_ShoppingCart__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {}) }],\n    };\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Routers);\n\n\n//# sourceURL=webpack://checkout/./src/routers/index.tsx?");
 
 /***/ }),
 

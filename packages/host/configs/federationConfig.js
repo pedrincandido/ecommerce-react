@@ -4,8 +4,8 @@ module.exports = {
   name: "host",
   filename: "remoteEntry.js",
   remotes: {
-    checkout: "checkout@http://localhost:3001/remoteEntry.js",
-    search: "search@http://localhost:3002/remoteEntry.js",
+    checkout: "checkout@http://localhost:3010/remoteEntry.js",
+    search: "search@http://localhost:3020/remoteEntry.js",
     host: "host@http://localhost:3000/remoteEntry.js",
   },
   shared: {
