@@ -4,15 +4,15 @@ module.exports = {
   name: "checkout",
   filename: "remoteEntry.js",
   remotes: {
-    checkout: "checkout@http://localhost:8082/remoteEntry.js",
-    search: "search@http://localhost:8081/remoteEntry.js",
-    host: "host@http://localhost:8080/remoteEntry.js",
+    checkout: "checkout@http://localhost:3001/remoteEntry.js",
+    search: "search@http://localhost:3002/remoteEntry.js",
+    host: "host@http://localhost:3000/remoteEntry.js",
   },
   exposes: {
     './ShoppingCart': './src/components/ShoppingCart',
     "./store": "./src/store/store",
     "./cartSlice": "./src/store/cartSlice",
-    './Routers': './src/routers'
+    './routers': './src/routers'
   },
   shared: {
     ...dependencies,

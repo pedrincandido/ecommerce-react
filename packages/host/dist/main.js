@@ -22,14 +22,14 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 
 /***/ "webpack/container/reference/checkout":
 /*!****************************************************************!*\
-  !*** external "checkout@http://localhost:8082/remoteEntry.js" ***!
+  !*** external "checkout@http://localhost:3001/remoteEntry.js" ***!
   \****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var __webpack_error__ = new Error();
 module.exports = new Promise((resolve, reject) => {
 	if(typeof checkout !== "undefined") return resolve();
-	__webpack_require__.l("http://localhost:8082/remoteEntry.js", (event) => {
+	__webpack_require__.l("http://localhost:3001/remoteEntry.js", (event) => {
 		if(typeof checkout !== "undefined") return resolve();
 		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 		var realSrc = event && event.target && event.target.src;
@@ -45,14 +45,14 @@ module.exports = new Promise((resolve, reject) => {
 
 /***/ "webpack/container/reference/search":
 /*!**************************************************************!*\
-  !*** external "search@http://localhost:8081/remoteEntry.js" ***!
+  !*** external "search@http://localhost:3002/remoteEntry.js" ***!
   \**************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var __webpack_error__ = new Error();
 module.exports = new Promise((resolve, reject) => {
 	if(typeof search !== "undefined") return resolve();
-	__webpack_require__.l("http://localhost:8081/remoteEntry.js", (event) => {
+	__webpack_require__.l("http://localhost:3002/remoteEntry.js", (event) => {
 		if(typeof search !== "undefined") return resolve();
 		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 		var realSrc = event && event.target && event.target.src;
@@ -235,19 +235,19 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 	(() => {
 /******/ 		var chunkMapping = {
 /******/ 			"src_bootstrap_tsx": [
-/******/ 				"webpack/container/remote/checkout/Routers",
-/******/ 				"webpack/container/remote/search/Routers"
+/******/ 				"webpack/container/remote/checkout/routers",
+/******/ 				"webpack/container/remote/search/routers"
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
-/******/ 			"webpack/container/remote/checkout/Routers": [
+/******/ 			"webpack/container/remote/checkout/routers": [
 /******/ 				"default",
-/******/ 				"./Routers",
+/******/ 				"./routers",
 /******/ 				"webpack/container/reference/checkout"
 /******/ 			],
-/******/ 			"webpack/container/remote/search/Routers": [
+/******/ 			"webpack/container/remote/search/routers": [
 /******/ 				"default",
-/******/ 				"./Routers",
+/******/ 				"./routers",
 /******/ 				"webpack/container/reference/search"
 /******/ 			]
 /******/ 		};

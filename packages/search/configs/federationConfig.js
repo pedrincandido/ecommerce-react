@@ -4,12 +4,13 @@ module.exports = {
   name: "search",
   filename: "remoteEntry.js",
   remotes: {
-    checkout: "checkout@http://localhost:8082/remoteEntry.js",
-    search: "search@http://localhost:8081/remoteEntry.js",
-    host: "host@http://localhost:8080/remoteEntry.js",
+    checkout: "checkout@http://localhost:3001/remoteEntry.js",
+    search: "search@http://localhost:3002/remoteEntry.js",
+    host: "host@http://localhost:3000/remoteEntry.js",
   },
   exposes: {
     "./Search": "./src/components/SearchContent",
+    './routers': './src/routers',
   },
   shared: {
     ...dependencies,

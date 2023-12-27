@@ -17,20 +17,20 @@ var search;
   \***********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("var moduleMap = {\n\t\"./Search\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"vendors-node_modules_styled-components_dist_styled-components_browser_esm_js-node_modules_rea-0d4a95\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_SearchContent_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/SearchContent */ \"./src/components/SearchContent.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://search/container_entry?");
+eval("var moduleMap = {\n\t\"./Search\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"vendors-node_modules_styled-components_dist_styled-components_browser_esm_js-node_modules_rea-0d4a95\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_container_remote_checkout_cartSlice\"), __webpack_require__.e(\"src_components_SearchContent_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/SearchContent */ \"./src/components/SearchContent.tsx\")))));\n\t},\n\t\"./routers\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"vendors-node_modules_styled-components_dist_styled-components_browser_esm_js-node_modules_rea-0d4a95\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_container_remote_checkout_cartSlice\"), __webpack_require__.e(\"src_routers_index_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/routers */ \"./src/routers/index.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://search/container_entry?");
 
 /***/ }),
 
 /***/ "webpack/container/reference/checkout":
 /*!****************************************************************!*\
-  !*** external "checkout@http://localhost:8082/remoteEntry.js" ***!
+  !*** external "checkout@http://localhost:3001/remoteEntry.js" ***!
   \****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var __webpack_error__ = new Error();
 module.exports = new Promise((resolve, reject) => {
 	if(typeof checkout !== "undefined") return resolve();
-	__webpack_require__.l("http://localhost:8082/remoteEntry.js", (event) => {
+	__webpack_require__.l("http://localhost:3001/remoteEntry.js", (event) => {
 		if(typeof checkout !== "undefined") return resolve();
 		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 		var realSrc = event && event.target && event.target.src;
@@ -242,7 +242,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 	/* webpack/runtime/remotes loading */
 /******/ 	(() => {
 /******/ 		var chunkMapping = {
-/******/ 			"src_components_SearchContent_tsx": [
+/******/ 			"webpack_container_remote_checkout_cartSlice": [
 /******/ 				"webpack/container/remote/checkout/cartSlice"
 /******/ 			]
 /******/ 		};
@@ -568,7 +568,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("webpack_sharing_consume_default_react_react" != chunkId) {
+/******/ 						if(!/^webpack_(container_remote_checkout_cartSlice|sharing_consume_default_react_react)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);

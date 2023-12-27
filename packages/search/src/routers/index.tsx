@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import ShoppingCart from "../components/ShoppingCart";
+import SearchContent from "../components/SearchContent";
 
 type SubRoutChild = {
   path?: string;
@@ -14,8 +14,8 @@ export type PathRoutePropsItems = {
 
 const Routers = (): PathRoutePropsItems | {} => {
   return {
-    path: "checkout",
-    children: [{ path: "", element: <ShoppingCart /> }],
+    path: "search",
+    children: [{ path: "", element: <SearchContent /> }],
   };
 };
 

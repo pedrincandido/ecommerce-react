@@ -1,5 +1,5 @@
 /// <reference types="react-scripts" />
 
-declare module "checkout/Routers";
-declare module "search/Routers";
+declare module "checkout/routers";
+declare module "search/routers";
 
