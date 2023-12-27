@@ -1,7 +1,7 @@
 const dependencies = require("../package.json").dependencies;
 
 module.exports = {
-  name: "app1",
+  name: "search",
   filename: "remoteEntry.js",
   exposes: {
     "./App": "./src/App",

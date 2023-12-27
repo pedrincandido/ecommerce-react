@@ -1,14 +1,9 @@
-import React from "react";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Routers from './routers';
 
-const App1 = React.lazy(() => import("app1/App"));
 
-function App() {
-  return (
-    <>
-      <App1 />
-      <div className="App">host</div>
-    </>
-  );
-}
+const App = () => {
+  return <RouterProvider router={createBrowserRouter(Routers())} />;
+};
 
 export default App;

@@ -4,7 +4,9 @@ module.exports = {
   name: "host",
   filename: "remoteEntry.js",
   remotes: {
-    app1: "app1@http://localhost:3001/remoteEntry.js",
+    checkout: "checkout@http://localhost:8082/remoteEntry.js",
+    search: "search@http://localhost:8081/remoteEntry.js",
+    host: "host@http://localhost:8080/remoteEntry.js",
   },
   shared: {
     ...dependencies,

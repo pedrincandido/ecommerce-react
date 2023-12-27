@@ -1,16 +1,16 @@
-import { PokemonCard } from "./PokemonCard";
+import { ProductCard } from "./ProductCard";
 
 const HomeContent = () => (
   <>
-    <PokemonCard id={10}>
+    <ProductCard id={10}>
       <p>
         Caterpie is a Pokémon that resembles a green caterpillar with a yellow
         underside and teardrop-shaped tail. There are yellow ring-shaped
         markings down the sides of its segmented body, which resemble its eyes
         and are meant to scare off predators.
       </p>
-    </PokemonCard>
-    <PokemonCard id={20} right>
+    </ProductCard>
+    <ProductCard id={20} right>
       <p>
         Raticate is a large rodent Pokémon. Although it is often depicted on its
         hind legs, it is a quadruped. It is primarily tawny-colored with a cream
@@ -21,8 +21,8 @@ const HomeContent = () => (
         toes. The webbing on its feet allows it to swim. Its tail is long and
         scaly. A female will have shorter whiskers and lighter fur.
       </p>
-    </PokemonCard>
-    <PokemonCard id={30}>
+    </ProductCard>
+    <ProductCard id={30}>
       <p>
         Nidorina is a quadruped, light blue Pokémon with darker blue patches. It
         has red eyes, large, spiny ears, and has two pointed teeth protruding
@@ -32,7 +32,7 @@ const HomeContent = () => (
         hind legs are longer and thicker than its forelegs. It has a stubby
         tail. Nidorina is a female-only species.
       </p>
-    </PokemonCard>
+    </ProductCard>
   </>
 );
 

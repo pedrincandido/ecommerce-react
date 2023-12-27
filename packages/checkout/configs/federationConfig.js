@@ -1,10 +1,17 @@
 const dependencies = require("../package.json").dependencies;
 
 module.exports = {
-  name: "app1",
+  name: "checkout",
   filename: "remoteEntry.js",
+  remotes: {
+    checkout: "checkout@http://localhost:8082/remoteEntry.js",
+    search: "search@http://localhost:8081/remoteEntry.js",
+    host: "host@http://localhost:8080/remoteEntry.js",
+  },
   exposes: {
-    "./App": "./src/App",
+    "./store": "./src/store/store",
+    "./cartSlice": "./src/store/cartSlice",
+    './Routers': './src/Routers',
   },
   shared: {
     ...dependencies,

@@ -6,18 +6,18 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-var app1;
+var checkout;
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "webpack/container/entry/app1":
+/***/ "webpack/container/entry/checkout":
 /*!***********************!*\
   !*** container entry ***!
   \***********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_App_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/App */ \"./src/App.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://app1/container_entry?");
+eval("var moduleMap = {\n\t\"./store\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_store_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/store */ \"./src/store/store.ts\")))));\n\t},\n\t\"./cartSlice\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_cartSlice_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/cartSlice */ \"./src/store/cartSlice.ts\")))));\n\t},\n\t\"./Routers\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_Routers_index_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/Routers */ \"./src/Routers/index.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://checkout/container_entry?");
 
 /***/ })
 
@@ -57,6 +57,18 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 	__webpack_require__.c = __webpack_module_cache__;
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -111,7 +123,7 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "app1:";
+/******/ 		var dataWebpackPrefix = "checkout:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -174,6 +186,55 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/remotes loading */
+/******/ 	(() => {
+/******/ 		var chunkMapping = {};
+/******/ 		var idToExternalAndNameMapping = {};
+/******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
+/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
+/******/ 				chunkMapping[chunkId].forEach((id) => {
+/******/ 					var getScope = __webpack_require__.R;
+/******/ 					if(!getScope) getScope = [];
+/******/ 					var data = idToExternalAndNameMapping[id];
+/******/ 					if(getScope.indexOf(data) >= 0) return;
+/******/ 					getScope.push(data);
+/******/ 					if(data.p) return promises.push(data.p);
+/******/ 					var onError = (error) => {
+/******/ 						if(!error) error = new Error("Container missing");
+/******/ 						if(typeof error.message === "string")
+/******/ 							error.message += '\nwhile loading "' + data[1] + '" from ' + data[2];
+/******/ 						__webpack_require__.m[id] = () => {
+/******/ 							throw error;
+/******/ 						}
+/******/ 						data.p = 0;
+/******/ 					};
+/******/ 					var handleFunction = (fn, arg1, arg2, d, next, first) => {
+/******/ 						try {
+/******/ 							var promise = fn(arg1, arg2);
+/******/ 							if(promise && promise.then) {
+/******/ 								var p = promise.then((result) => (next(result, d)), onError);
+/******/ 								if(first) promises.push(data.p = p); else return p;
+/******/ 							} else {
+/******/ 								return next(promise, d, first);
+/******/ 							}
+/******/ 						} catch(error) {
+/******/ 							onError(error);
+/******/ 						}
+/******/ 					}
+/******/ 					var onExternal = (external, _, first) => (external ? handleFunction(__webpack_require__.I, data[0], 0, external, onInitialized, first) : onError());
+/******/ 					var onInitialized = (_, external, first) => (handleFunction(external.get, data[1], getScope, 0, onFactory, first));
+/******/ 					var onFactory = (factory) => {
+/******/ 						data.p = 1;
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							module.exports = factory();
+/******/ 						}
+/******/ 					};
+/******/ 					handleFunction(__webpack_require__, data[2], 0, 0, onExternal, 1);
+/******/ 				});
+/******/ 			}
+/******/ 		}
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/sharing */
 /******/ 	(() => {
 /******/ 		__webpack_require__.S = {};
@@ -195,7 +256,7 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 			var warn = (msg) => {
 /******/ 				if (typeof console !== "undefined" && console.warn) console.warn(msg);
 /******/ 			};
-/******/ 			var uniqueName = "app1";
+/******/ 			var uniqueName = "checkout";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -215,8 +276,11 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 			var promises = [];
 /******/ 			switch(name) {
 /******/ 				case "default": {
+/******/ 					register("@reduxjs/toolkit", "2.0.1", () => (Promise.all([__webpack_require__.e("vendors-node_modules_reduxjs_toolkit_dist_redux-toolkit_modern_mjs"), __webpack_require__.e("webpack_sharing_consume_default_redux-thunk_redux-thunk-webpack_sharing_consume_default_redux_redux")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs */ "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs"))))));
 /******/ 					register("react-dom", "18.2.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-dom/index.js */ "../../node_modules/react-dom/index.js"))))));
 /******/ 					register("react", "18.2.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ../../node_modules/react/index.js */ "../../node_modules/react/index.js"))))));
+/******/ 					register("redux-thunk", "3.1.0", () => (__webpack_require__.e("node_modules_redux-thunk_dist_redux-thunk_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/redux-thunk/dist/redux-thunk.mjs */ "../../node_modules/redux-thunk/dist/redux-thunk.mjs"))))));
+/******/ 					register("redux", "5.0.1", () => (__webpack_require__.e("vendors-node_modules_redux_dist_redux_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/redux/dist/redux.mjs */ "../../node_modules/redux/dist/redux.mjs"))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -386,12 +450,22 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
-/******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersionCheckFallback("default", "react", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "../../node_modules/react/index.js")))))))
+/******/ 			"webpack/sharing/consume/default/redux/redux": () => (loadStrictVersionCheckFallback("default", "redux", [4,5,0,1], () => (__webpack_require__.e("vendors-node_modules_redux_dist_redux_mjs").then(() => (() => (__webpack_require__(/*! redux */ "../../node_modules/redux/dist/redux.mjs"))))))),
+/******/ 			"webpack/sharing/consume/default/redux-thunk/redux-thunk": () => (loadStrictVersionCheckFallback("default", "redux-thunk", [1,3,1,0], () => (__webpack_require__.e("node_modules_redux-thunk_dist_redux-thunk_mjs").then(() => (() => (__webpack_require__(/*! redux-thunk */ "../../node_modules/redux-thunk/dist/redux-thunk.mjs"))))))),
+/******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersionCheckFallback("default", "react", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "../../node_modules/react/index.js"))))))),
+/******/ 			"webpack/sharing/consume/default/@reduxjs/toolkit/@reduxjs/toolkit": () => (loadStrictVersionCheckFallback("default", "@reduxjs/toolkit", [4,2,0,1], () => (Promise.all([__webpack_require__.e("vendors-node_modules_reduxjs_toolkit_dist_redux-toolkit_modern_mjs"), __webpack_require__.e("webpack_sharing_consume_default_redux-thunk_redux-thunk-webpack_sharing_consume_default_redux_redux")]).then(() => (() => (__webpack_require__(/*! @reduxjs/toolkit */ "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs")))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
+/******/ 			"webpack_sharing_consume_default_redux-thunk_redux-thunk-webpack_sharing_consume_default_redux_redux": [
+/******/ 				"webpack/sharing/consume/default/redux/redux",
+/******/ 				"webpack/sharing/consume/default/redux-thunk/redux-thunk"
+/******/ 			],
 /******/ 			"webpack_sharing_consume_default_react_react": [
 /******/ 				"webpack/sharing/consume/default/react/react"
+/******/ 			],
+/******/ 			"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit": [
+/******/ 				"webpack/sharing/consume/default/@reduxjs/toolkit/@reduxjs/toolkit"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -431,7 +505,7 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"app1": 0
+/******/ 			"checkout": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -443,7 +517,7 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("webpack_sharing_consume_default_react_react" != chunkId) {
+/******/ 						if(!/^webpack_sharing_consume_default_re(dux(\-thunk_redux\-thunk\-webpack_sharing_consume_default_redux_redux|js_toolkit_reduxjs_toolkit)|act_react)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -510,7 +584,7 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkapp1"] = self["webpackChunkapp1"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkcheckout"] = self["webpackChunkcheckout"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
@@ -520,8 +594,8 @@ eval("var moduleMap = {\n\t\"./App\": () => {\n\t\treturn Promise.all([__webpack
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/app1");
-/******/ 	app1 = __webpack_exports__;
+/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/checkout");
+/******/ 	checkout = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
