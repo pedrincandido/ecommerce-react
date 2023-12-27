@@ -16,7 +16,7 @@ type PathRoutePropsItems = {
 const Local = (): PathRoutePropsItems | {} => {
   return {
     path: '/',
-    element: <RootLayout />,
+    // element: <RootLayout />,
     children: [
       { path: '', element: <Home /> },
     ],

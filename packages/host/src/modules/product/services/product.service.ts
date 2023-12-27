@@ -1,3 +1,22 @@
-export const getProductById = (id: number | undefined) => fetch(`/v1/cadastro/produto/${id}`);
+// export const getProductById = (id: number | undefined) => fetch(`/v1/cadastro/produto/${id}`);
 
-export const getImage = (name: string) => `http://localhost:7010/images/${name.toLowerCase().replace(" ", "-")}.jpg`;
+import { mockPokemon } from "./pokemon";
+
+export const getProductById = (id: number | undefined): Promise<any> => {
+  return new Promise<Response>((resolve) => {
+    setTimeout(() => {
+      if (id) {
+        resolve(
+          new Response(JSON.stringify(mockPokemon), {
+            status: 200,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+        );
+      } else {
+        resolve(new Response(null, { status: 404 }));
+      }
+    }, 1000);
+  });
+};

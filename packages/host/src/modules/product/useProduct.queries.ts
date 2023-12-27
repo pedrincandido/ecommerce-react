@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getProductById } from "./services/product.service";
 
 interface ProductQueryProps {
@@ -8,17 +8,19 @@ interface ProductQueryProps {
   onError?: (data: any) => {};
 }
 
-export const useGetProductByIdQuery = ({ enabled, id, onError, onSuccess }: ProductQueryProps) => {
-  const queryClient = useQueryClient();
+// export const useGetProductByIdQuery = ({ enabled, id, onError, onSuccess }: ProductQueryProps) => {
+//   const queryClient = useQueryClient();
 
-  return useQuery(["getProductById", id], () => getProductById(id), {
-    enabled,
-    refetchOnWindowFocus: false,
-    initialData: () => {
-      const initialResults = queryClient.getQueryData(["getProductById", id])?.data;
-      return initialResults ? { data: initialResults } : undefined;
-    },
-    onSuccess: onSuccess && onSuccess,
-    onError: onError && onError,
-  });
-};
+//   return useQuery(["getProductById", id], () => getProductById(id), {
+//     enabled,
+//     refetchOnWindowFocus: false,
+//     initialData: () => {
+//       const initialResults = queryClient.getQueryData(["getProductById", id])?.data;
+//       return initialResults ? { data: initialResults } : undefined;
+//     },
+//     onSuccess: onSuccess && onSuccess,
+//     onError: onError && onError,
+//   });
+// };
+
+

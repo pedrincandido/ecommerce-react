@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CartItem, addItem, removeItem } from "src/store/cartSlice";
-import { RootState } from "src/store/store";
+import { CartItem, addItem, removeItem } from "../store/cartSlice";
+import { RootState } from "../store/store";
 
 const ShoppingCart: React.FC = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -24,7 +24,9 @@ const ShoppingCart: React.FC = () => {
           <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
         </div>
       ))}
-      <button onClick={() => handleAddItem({ id: "new", title: "New Item", price: 100 })}>Add New Item</button>
+      <button onClick={() => handleAddItem({ id: "new", title: "New Item", price: 100, quantity: 1 })}>
+        Add New Item
+      </button>
     </div>
   );
 };

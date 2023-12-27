@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import ShoppingCart from "src/components/ShoppingCart";
+import ShoppingCart from "../components/ShoppingCart";
 
 type SubRoutChild = {
   path?: string;

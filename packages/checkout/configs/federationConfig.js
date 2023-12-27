@@ -9,9 +9,10 @@ module.exports = {
     host: "host@http://localhost:8080/remoteEntry.js",
   },
   exposes: {
+    './ShoppingCart': './src/components/ShoppingCart',
     "./store": "./src/store/store",
     "./cartSlice": "./src/store/cartSlice",
-    './Routers': './src/Routers',
+    './Routers': './src/routers'
   },
   shared: {
     ...dependencies,

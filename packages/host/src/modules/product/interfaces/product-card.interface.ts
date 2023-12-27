@@ -1,5 +1,5 @@
 export interface ProductCardProps {
   id: number;
-  children?: any;
+  children?: React.ReactNode;
   right?: boolean;
 }
