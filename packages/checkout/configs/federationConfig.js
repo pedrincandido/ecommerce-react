@@ -9,10 +9,10 @@ module.exports = {
   //   host: "host@http://localhost:3000/remoteEntry.js",
   // },
   exposes: {
-    './ShoppingCart': './src/components/ShoppingCart',
+    "./ShoppingCart": "./src/components/ShoppingCart",
     "./store": "./src/store/store",
     "./cartSlice": "./src/store/cartSlice",
-    './Routers': './src/Routers',
+    "./Routers": "./src/Routers",
   },
   shared: {
     ...dependencies,
@@ -23,6 +23,10 @@ module.exports = {
     "react-dom": {
       singleton: true,
       requiredVersion: dependencies["react-dom"],
+    },
+    "styled-components": {
+      singleton: true,
+      requiredVersion: '^6.1.3'
     },
   },
 };

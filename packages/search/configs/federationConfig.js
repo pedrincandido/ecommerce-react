@@ -10,7 +10,7 @@ module.exports = {
   },
   exposes: {
     "./Search": "./src/components/SearchContent",
-    './Routers': './src/Routers',
+    "./Routers": "./src/Routers",
   },
   shared: {
     ...dependencies,
@@ -21,6 +21,10 @@ module.exports = {
     "react-dom": {
       singleton: true,
       requiredVersion: dependencies["react-dom"],
+    },
+    "styled-components": {
+      singleton: true,
+      requiredVersion: '^6.1.3'
     },
   },
 };

@@ -1,7 +1,7 @@
 import { addItem } from "checkout/cartSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchPokemon as searchPokemonService } from "../services/product.service";
+import { searchPokemon } from "../services/product.service";
 import { CardImage, Col, Row, StyledCard, StyledCardBody, StyledCardText, StyledCardTitle } from "../styles/styles";
 import CustomFormControl from "./CustomFormControl/CustomFormControl";
 import { mockPokemon } from "../services/pokemon";
@@ -17,14 +17,18 @@ const SearchContent = () => {
     const doSearch = async () => {
       if (search.trim() !== "") {
         try {
-          const results = await searchPokemonService(search);
+          const response = await searchPokemon(search);
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const results = await response.json();
           setProducts(results);
         } catch (error) {
           console.error("Failed to fetch products:", error);
-          setProducts([]);
+          setProducts(mockPokemon);
         }
       } else {
-        setProducts([]);
+        setProducts(mockPokemon);
       }
     };
 
@@ -53,9 +57,9 @@ const SearchContent = () => {
           paddingTop: "1em",
         }}
       >
-        {products.map((product: any) => (
+        {products?.map((product: any) => (
           <StyledCard style={{ width: "18rem" }} key={product.name.english}>
-            <CardImage
+            {/* <CardImage
               // src={getImage(product)}
               style={{
                 maxHeight: 200,
@@ -63,7 +67,7 @@ const SearchContent = () => {
                 width: "auto",
                 height: "auto",
               }}
-            />
+            /> */}
             <StyledCardBody>
               <StyledCardTitle>{product.name.english}</StyledCardTitle>
               <StyledCardText>{product.type.join(", ")}</StyledCardText>

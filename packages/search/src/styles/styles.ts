@@ -8,21 +8,25 @@ export const Row = styled.div`
   margin-left: -15px;
 `;
 
-export const Col = styled.div<Partial<ColProps>>`
+const shouldForwardProp = (prop: string) => !["xs", "sm", "md", "lg", "xl"].includes(prop);
+
+export const Col = styled.div.withConfig({
+  shouldForwardProp,
+})<Partial<ColProps>>`
   padding-right: 15px;
   padding-left: 15px;
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
 
-  ${({ xs }: Partial<ColProps>) =>
+  ${({ xs }) =>
     xs &&
     `
     flex: 0 0 ${(100 / 12) * xs}%;
     max-width: ${(100 / 12) * xs}%;
   `}
 
-  ${({ sm }: Partial<ColProps>) =>
+  ${({ sm }) =>
     sm &&
     `
     @media (min-width: 576px) {
@@ -31,7 +35,7 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 
-  ${({ md }: Partial<ColProps>) =>
+  ${({ md }) =>
     md &&
     `
     @media (min-width: 768px) {
@@ -40,7 +44,7 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 
-  ${({ lg }: Partial<ColProps>) =>
+  ${({ lg }) =>
     lg &&
     `
     @media (min-width: 992px) {
@@ -49,7 +53,7 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 
-  ${({ xl }: Partial<ColProps>) =>
+  ${({ xl }) =>
     xl &&
     `
     @media (min-width: 1200px) {
@@ -58,7 +62,6 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 `;
-
 
 export const StyledCard = styled.div`
   position: relative;
@@ -86,8 +89,6 @@ export const StyledCardText = styled.p`
   margin-top: 0;
   margin-bottom: 1rem;
 `;
-
-
 
 export const CardImage = styled.img`
   max-height: 200px;

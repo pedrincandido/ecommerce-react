@@ -18,5 +18,9 @@ module.exports = {
       singleton: true,
       requiredVersion: dependencies["react-dom"],
     },
+    "styled-components": {
+      singleton: true,
+      requiredVersion: '^6.1.3'
+    },
   },
 };
