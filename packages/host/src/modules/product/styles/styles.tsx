@@ -15,14 +15,14 @@ export const Col = styled.div<Partial<ColProps>>`
   flex-grow: 1;
   max-width: 100%;
 
-  ${({ xs }: ColProps) =>
+  ${({ xs }: Partial<ColProps>) =>
     xs &&
     `
     flex: 0 0 ${(100 / 12) * xs}%;
     max-width: ${(100 / 12) * xs}%;
   `}
 
-  ${({ sm }: ColProps) =>
+  ${({ sm }: Partial<ColProps>) =>
     sm &&
     `
     @media (min-width: 576px) {
@@ -31,7 +31,7 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 
-  ${({ md }: ColProps) =>
+  ${({ md }: Partial<ColProps>) =>
     md &&
     `
     @media (min-width: 768px) {
@@ -40,7 +40,7 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 
-  ${({ lg }: ColProps) =>
+  ${({ lg }: Partial<ColProps>) =>
     lg &&
     `
     @media (min-width: 992px) {
@@ -49,7 +49,7 @@ export const Col = styled.div<Partial<ColProps>>`
     }
   `}
 
-  ${({ xl }: ColProps) =>
+  ${({ xl }: Partial<ColProps>) =>
     xl &&
     `
     @media (min-width: 1200px) {

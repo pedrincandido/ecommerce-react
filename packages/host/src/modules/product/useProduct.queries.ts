@@ -1,3 +1,4 @@
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { getProductById } from "./services/product.service";
 
 interface ProductQueryProps {
