@@ -1,23 +1,39 @@
-import React from "react";
-import { useQuery } from "react-query";
+import { addItem } from "checkout/cartSlice";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { searchPokemon as searchPokemonService } from "../services/product.service";
 import { CardImage, Col, Row, StyledCard, StyledCardBody, StyledCardText, StyledCardTitle } from "../styles/styles";
 import CustomFormControl from "./CustomFormControl/CustomFormControl";
-
-import { addItem } from "checkout/cartSlice";
-
-// const AddToCart = React.lazy(() => import("checkout/cartSlice"));
+import { mockPokemon } from "../services/pokemon";
 
 const SearchContent = () => {
-  const data: any = [];
   const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+  const [products, setProducts] = useState(mockPokemon);
+
+  console.log(products);
+
+  useEffect(() => {
+    const doSearch = async () => {
+      if (search.trim() !== "") {
+        try {
+          const results = await searchPokemonService(search);
+          setProducts(results);
+        } catch (error) {
+          console.error("Failed to fetch products:", error);
+          setProducts([]);
+        }
+      } else {
+        setProducts([]);
+      }
+    };
+
+    doSearch();
+  }, [search]);
 
   const handleAddItem = (item: any) => {
     dispatch(addItem(item));
   };
-
-  const [search, searchSet] = React.useState("");
-  // const { data } = useQuery(["searchPokemon", { q: search }], searchPokemon);
 
   return (
     <>
@@ -26,7 +42,7 @@ const SearchContent = () => {
           type="text"
           placeholder="Search"
           value={search}
-          onChange={(e) => searchSet(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </Row>
       <div
@@ -37,34 +53,31 @@ const SearchContent = () => {
           paddingTop: "1em",
         }}
       >
-        {data &&
-          data.map((product: any) => (
-            <StyledCard style={{ width: "18rem" }} key={product.name.english}>
-              <CardImage
-                // src={getImage(product)}
-                style={{
-                  maxHeight: 200,
-                  objectFit: "contain",
-                  width: "auto",
-                  height: "auto",
-                }}
-              ></CardImage>
-              <StyledCardBody>
-                <StyledCardTitle>{product.name.english}</StyledCardTitle>
-                <StyledCardText>{product.type.join(", ")}</StyledCardText>
-                <Row>
-                  <Col xs={4}>${product.price}</Col>
-                  <Col xs={8}>
-                    <React.Suspense fallback={<span />}>
-                      <button onClick={() => handleAddItem(product)} style={{ width: "100%" }}>
-                        Add To Cart
-                      </button>
-                    </React.Suspense>
-                  </Col>
-                </Row>
-              </StyledCardBody>
-            </StyledCard>
-          ))}
+        {products.map((product: any) => (
+          <StyledCard style={{ width: "18rem" }} key={product.name.english}>
+            <CardImage
+              // src={getImage(product)}
+              style={{
+                maxHeight: 200,
+                objectFit: "contain",
+                width: "auto",
+                height: "auto",
+              }}
+            />
+            <StyledCardBody>
+              <StyledCardTitle>{product.name.english}</StyledCardTitle>
+              <StyledCardText>{product.type.join(", ")}</StyledCardText>
+              <Row>
+                <Col xs={4}>${product.price}</Col>
+                <Col xs={8}>
+                  <button onClick={() => handleAddItem(product)} style={{ width: "100%" }}>
+                    Add To Cart
+                  </button>
+                </Col>
+              </Row>
+            </StyledCardBody>
+          </StyledCard>
+        ))}
       </div>
     </>
   );

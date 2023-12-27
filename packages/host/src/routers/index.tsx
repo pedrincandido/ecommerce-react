@@ -1,12 +1,14 @@
-import RemoteApp1Routers from "checkout/Routers";
-import RemoteApp2Routers from "search/Routers";
+import React from "react";
+import RemoteSearchApp from "search/Routers";
 import Local from "./Local";
-import Home from "../pages/Home";
+
+const Search = React.lazy(() => import("search/Search"));
+// const Checkout = React.lazy(() => import("checkout/Checkout"));
 
 const Routers = () => [
   Local(),
-  // { ...RemoteApp2Routers(), element: <Home /> },
-  // { ...RemoteApp1Routers(), element: <Home /> },
+  { ...RemoteSearchApp() },
+  // { ...RemoteApp1Routers() },
 ];
 
 export default Routers;

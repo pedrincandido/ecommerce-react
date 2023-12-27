@@ -14,7 +14,7 @@ export type PathRoutePropsItems = {
 
 const Routers = (): PathRoutePropsItems | {} => {
   return {
-    path: "app-1",
+    path: "search",
     children: [{ path: "", element: <SearchContent /> }],
   };
 };

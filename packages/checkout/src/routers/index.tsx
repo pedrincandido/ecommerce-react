@@ -14,7 +14,7 @@ export type PathRoutePropsItems = {
 
 const Routers = (): PathRoutePropsItems | {} => {
   return {
-    path: "app-2",
+    path: "checkout",
     children: [{ path: "", element: <ShoppingCart /> }],
   };
 };
