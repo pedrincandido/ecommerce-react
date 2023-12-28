@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { ProductCardProps } from "./interfaces/product-card.interface";
+import { useEffect, useState } from "react";
+import { ProductCardProps } from "../interfaces/product-card.interface";
 // import { getImage } from "./services/product.service";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch } from "react-redux";
-import { Pokemon, getProductById } from "./services/product.service";
-import { Col, Row, StyledButton } from "./styles/styles";
 import { addItem } from "checkout/cartSlice";
+import { useDispatch } from "react-redux";
+import { Pokemon, getProductById } from "../services/product.service";
+import { Card, CardContent, CardFooter, StyledButton } from "../styles/styles";
 
 export const ProductCard = ({ id, children, right }: ProductCardProps) => {
   const dispatch = useDispatch();
@@ -45,37 +45,43 @@ export const ProductCard = ({ id, children, right }: ProductCardProps) => {
   };
 
   return (
-    <div
-      style={{
-        marginTop: "1em",
-        padding: "1em",
-        border: "1px solid #ccc",
-        borderRadius: 5,
-        width: 200
-      }}
-    >
-      <Row>
-        {!right && <Col xs={3}>{/* <img src={getImage(product)} style={{ width: "100%" }} /> */}</Col>}
-        <Col xs={9}>
-          <h1>{product?.name.english}</h1>
-          {children}
-          <Row>
-            <Col xs={5} style={{ fontWeight: "bold" }}>
-              ${product?.price}
-            </Col>
-            <Col xs={3}>
-              <React.Suspense fallback={<span />}>{/* <AddToCart pokemon={product} /> */}</React.Suspense>
-            </Col>
-          </Row>
-        </Col>
+    <Card>
+      <CardContent>
+        <h1>{product?.name.english}</h1>
+        {children}
+        <div>${product?.price}</div>
+      </CardContent>
+      <CardFooter>
         <StyledButton onClick={() => handleAddItem(product)}>
           <FontAwesomeIcon icon={faShoppingCart} /> Add To Cart
         </StyledButton>
+      </CardFooter>
+    </Card>
 
-        {right && <Col xs={3}>{/* <img src={getImage(product)} style={{ width: "100%" }} /> */}</Col>}
-        {/* </> */}
-        {/* )} */}
-      </Row>
-    </div>
+    // <div
+    //   style={{
+    //     marginTop: "1em",
+    //     padding: "1em",
+    //     border: "1px solid #ccc",
+    //     borderRadius: 5,
+    //     width: 350,
+    //     height: '100%',
+    //   }}
+    // >
+    //   <Row>
+    //     <Col xs={9}>
+    //       <h1>{product?.name.english}</h1>
+    //       {children}
+    //       <Row>
+    //         <Col xs={5} style={{ fontWeight: "bold" }}>
+    //           ${product?.price}
+    //         </Col>
+    //       </Row>
+    //     </Col>
+    //     <StyledButton onClick={() => handleAddItem(product)}>
+    //       <FontAwesomeIcon icon={faShoppingCart} /> Add To Cart
+    //     </StyledButton>
+    //   </Row>
+    // </div>
   );
 };

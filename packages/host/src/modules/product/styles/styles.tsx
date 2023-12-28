@@ -84,3 +84,35 @@ export const StyledButton = styled.button`
   }
 `;
 
+
+export const CardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+`;
+
+
+export const Card = styled.div`
+  flex: 1;
+  min-width: 280px; // Largura mínima para responsividade
+  max-width: 350px; // Largura máxima para que não fiquem muito largos
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Isso garante que o botão fique no rodapé
+  height: 100%;
+`;
+
+export const CardContent = styled.div`
+  padding: 1em;
+`;
+
+export const CardFooter = styled.div`
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+`;

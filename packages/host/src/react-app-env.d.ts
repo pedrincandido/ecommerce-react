@@ -6,4 +6,3 @@ declare module 'search/Search';
 declare module 'search/Routers';
 declare module 'checkout/store';
 declare module 'checkout/cartSlice';
-// declare module 'checkout/Checkout';

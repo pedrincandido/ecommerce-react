@@ -267,7 +267,8 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			"src_bootstrap_tsx": [
 /******/ 				"webpack/container/remote/checkout/store",
 /******/ 				"webpack/container/remote/checkout/cartSlice",
-/******/ 				"webpack/container/remote/search/Routers"
+/******/ 				"webpack/container/remote/search/Routers",
+/******/ 				"webpack/container/remote/checkout/Routers"
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
@@ -285,6 +286,11 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				"default",
 /******/ 				"./Routers",
 /******/ 				"webpack/container/reference/search"
+/******/ 			],
+/******/ 			"webpack/container/remote/checkout/Routers": [
+/******/ 				"default",
+/******/ 				"./Routers",
+/******/ 				"webpack/container/reference/checkout"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {

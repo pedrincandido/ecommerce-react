@@ -4,8 +4,6 @@ module.exports = {
   name: "checkout",
   filename: "remoteEntry.js",
   // remotes: {
-  //   checkout: "checkout@http://localhost:3001/remoteEntry.js",
-  //   search: "search@http://localhost:3002/remoteEntry.js",
   //   host: "host@http://localhost:3000/remoteEntry.js",
   // },
   exposes: {
@@ -26,7 +24,7 @@ module.exports = {
     },
     "styled-components": {
       singleton: true,
-      requiredVersion: '^6.1.3'
+      requiredVersion: "^6.1.3",
     },
   },
 };

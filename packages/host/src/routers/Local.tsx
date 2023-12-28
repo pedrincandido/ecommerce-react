@@ -1,8 +1,9 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 // import RootLayout from '../components/RootLayout';
-import RootLayout from '../pages/Home';
-import HomeContent from '../modules/product/HomeContent';
+import RootLayout from "../pages/RootLayout";
+import HomeContent from "../modules/product/components/HomeContent";
 import RemoteApp2Routers from "search/Routers";
+import RemoteApp1Routers from "checkout/Routers";
 
 type SubRoutChild = {
   path?: string;
@@ -17,10 +18,11 @@ type PathRoutePropsItems = {
 
 const Local = (): PathRoutePropsItems | {} => {
   return {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     children: [
-      { path: '', element: <HomeContent /> },
+      { path: "", element: <HomeContent /> },
+      { ...RemoteApp1Routers() },
       { ...RemoteApp2Routers() },
     ],
   };

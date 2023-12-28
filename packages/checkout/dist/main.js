@@ -256,12 +256,16 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 /******/ 			var promises = [];
 /******/ 			switch(name) {
 /******/ 				case "default": {
+/******/ 					register("@fortawesome/fontawesome-svg-core", "6.5.1", () => (__webpack_require__.e("vendors-node_modules_fortawesome_fontawesome-svg-core_index_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs */ "../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs"))))));
+/******/ 					register("@fortawesome/free-solid-svg-icons", "6.5.1", () => (__webpack_require__.e("vendors-node_modules_fortawesome_free-solid-svg-icons_index_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs */ "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs"))))));
+/******/ 					register("@fortawesome/react-fontawesome", "0.2.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_fortawesome_react-fontawesome_index_es_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_fortawesome_fontawesome-svg-core_fortawesome_fontawesome-svg-core")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/@fortawesome/react-fontawesome/index.es.js */ "../../node_modules/@fortawesome/react-fontawesome/index.es.js"))))));
 /******/ 					register("@reduxjs/toolkit", "2.0.1", () => (Promise.all([__webpack_require__.e("vendors-node_modules_reduxjs_toolkit_dist_redux-toolkit_modern_mjs"), __webpack_require__.e("webpack_sharing_consume_default_redux-thunk_redux-thunk-webpack_sharing_consume_default_redux_redux")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs */ "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs"))))));
 /******/ 					register("react-dom", "18.2.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-dom/index.js */ "../../node_modules/react-dom/index.js"))))));
 /******/ 					register("react-redux", "9.0.4", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-redux_dist_react-redux_mjs"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-redux/dist/react-redux.mjs */ "../../node_modules/react-redux/dist/react-redux.mjs"))))));
 /******/ 					register("react", "18.2.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ../../node_modules/react/index.js */ "../../node_modules/react/index.js"))))));
 /******/ 					register("redux-thunk", "3.1.0", () => (__webpack_require__.e("node_modules_redux-thunk_dist_redux-thunk_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/redux-thunk/dist/redux-thunk.mjs */ "../../node_modules/redux-thunk/dist/redux-thunk.mjs"))))));
 /******/ 					register("redux", "5.0.1", () => (__webpack_require__.e("vendors-node_modules_redux_dist_redux_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/redux/dist/redux.mjs */ "../../node_modules/redux/dist/redux.mjs"))))));
+/******/ 					register("styled-components", "6.1.6", () => (Promise.all([__webpack_require__.e("vendors-node_modules_styled-components_dist_styled-components_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/styled-components/dist/styled-components.browser.esm.js */ "../../node_modules/styled-components/dist/styled-components.browser.esm.js"))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -433,6 +437,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersionCheckFallback("default", "react", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "../../node_modules/react/index.js"))))))),
 /******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadSingletonVersionCheckFallback("default", "react-dom", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "../../node_modules/react-dom/index.js"))))))),
+/******/ 			"webpack/sharing/consume/default/@fortawesome/fontawesome-svg-core/@fortawesome/fontawesome-svg-core": () => (loadStrictVersionCheckFallback("default", "@fortawesome/fontawesome-svg-core", [1,6,5,1], () => (__webpack_require__.e("vendors-node_modules_fortawesome_fontawesome-svg-core_index_mjs").then(() => (() => (__webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs"))))))),
 /******/ 			"webpack/sharing/consume/default/redux/redux": () => (loadStrictVersionCheckFallback("default", "redux", [4,5,0,1], () => (__webpack_require__.e("vendors-node_modules_redux_dist_redux_mjs").then(() => (() => (__webpack_require__(/*! redux */ "../../node_modules/redux/dist/redux.mjs"))))))),
 /******/ 			"webpack/sharing/consume/default/redux-thunk/redux-thunk": () => (loadStrictVersionCheckFallback("default", "redux-thunk", [1,3,1,0], () => (__webpack_require__.e("node_modules_redux-thunk_dist_redux-thunk_mjs").then(() => (() => (__webpack_require__(/*! redux-thunk */ "../../node_modules/redux-thunk/dist/redux-thunk.mjs")))))))
 /******/ 		};
@@ -443,6 +448,9 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 /******/ 			],
 /******/ 			"src_bootstrap_tsx": [
 /******/ 				"webpack/sharing/consume/default/react-dom/react-dom"
+/******/ 			],
+/******/ 			"webpack_sharing_consume_default_fortawesome_fontawesome-svg-core_fortawesome_fontawesome-svg-core": [
+/******/ 				"webpack/sharing/consume/default/@fortawesome/fontawesome-svg-core/@fortawesome/fontawesome-svg-core"
 /******/ 			],
 /******/ 			"webpack_sharing_consume_default_redux-thunk_redux-thunk-webpack_sharing_consume_default_redux_redux": [
 /******/ 				"webpack/sharing/consume/default/redux/redux",
@@ -498,7 +506,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_sharing_consume_default_re(act_react|dux\-thunk_redux\-thunk\-webpack_sharing_consume_default_redux_redux)$/.test(chunkId)) {
+/******/ 						if(!/^webpack_sharing_consume_default_(re(act_react|dux\-thunk_redux\-thunk\-webpack_sharing_consume_default_redux_redux)|fortawesome_fontawesome\-svg\-core_fortawesome_fontawesome\-svg\-core)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -568,6 +576,11 @@ eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[_
 /******/ 		var chunkLoadingGlobal = self["webpackChunkcheckout"] = self["webpackChunkcheckout"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

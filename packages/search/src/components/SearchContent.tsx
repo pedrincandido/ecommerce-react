@@ -4,9 +4,9 @@ import { addItem } from "checkout/cartSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { pokemonWithPrices, searchPokemon } from "../services/product.service";
-import { Col, Row, StyledCard, StyledCardBody, StyledCardText, StyledCardTitle } from "../styles/styles";
+import { CardGrid, Col, Row, StyledCard, StyledCardBody, StyledCardText, StyledCardTitle } from "../styles/styles";
 import CustomFormControl from "./CustomFormControl/CustomFormControl";
-import { StyledButton } from "./styles";
+import { StyledButton, StyledContainer } from "./styles";
 
 const SearchContent = () => {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const SearchContent = () => {
   };
 
   return (
-    <>
+    <StyledContainer>
       <Row style={{ paddingTop: "1em" }}>
         <CustomFormControl
           type="text"
@@ -49,25 +49,9 @@ const SearchContent = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </Row>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 33%)",
-          gridGap: "1em",
-          paddingTop: "1em",
-        }}
-      >
+      <CardGrid>
         {products?.map((product: any) => (
-          <StyledCard style={{ width: "18rem" }} key={product.name.english}>
-            {/* <CardImage
-              // src={getImage(product)}
-              style={{
-                maxHeight: 200,
-                objectFit: "contain",
-                width: "auto",
-                height: "auto",
-              }}
-            /> */}
+          <StyledCard key={product.name.english}>
             <StyledCardBody>
               <StyledCardTitle>{product.name.english}</StyledCardTitle>
               <StyledCardText>{product.type.join(", ")}</StyledCardText>
@@ -82,8 +66,8 @@ const SearchContent = () => {
             </StyledCardBody>
           </StyledCard>
         ))}
-      </div>
-    </>
+      </CardGrid>
+    </StyledContainer>
   );
 };
 

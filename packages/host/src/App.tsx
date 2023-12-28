@@ -1,4 +1,4 @@
-import { store } from "checkout/store"; // This is assuming you have a federated module exposing the store
+import { store } from "checkout/store";
 import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Routers from "./routers";

@@ -20,7 +20,7 @@ module.exports = {
     },
     "styled-components": {
       singleton: true,
-      requiredVersion: '^6.1.3'
+      requiredVersion: "^6.1.3",
     },
   },
 };

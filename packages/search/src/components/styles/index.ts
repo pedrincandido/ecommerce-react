@@ -24,3 +24,8 @@ export const StyledButton = styled.button`
     background-color: #367c39;
   }
 `;
+
+
+export const StyledContainer = styled.div`
+  margin: 10px;
+`;

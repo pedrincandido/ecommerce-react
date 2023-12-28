@@ -67,12 +67,18 @@ export const StyledCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+`;
+
+export const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding-top: 1em;
+  grid-gap: 10px;
 `;
 
 export const StyledCardBody = styled.div`

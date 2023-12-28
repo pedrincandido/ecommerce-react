@@ -5,7 +5,6 @@ import Local from "./Local";
 
 const Routers = () => [
   Local(),
-  // { ...RemoteApp1Routers() },
 ];
 
 export default Routers;

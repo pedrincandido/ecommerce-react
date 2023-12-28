@@ -43,3 +43,6 @@ export const getProductById = (idProduct: number | undefined): Promise<any> => {
     }, 1000);
   });
 };
+
+export const getImage = (name: string) =>
+  `http://localhost:7010/images/${name.toLowerCase().replace(" ", "-")}.jpg`;
