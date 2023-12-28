@@ -17,7 +17,7 @@ var checkout;
   \***********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_fortawesome_free-solid-svg-icons_fortawesome_free-solid-svg-i-ca294c\"), __webpack_require__.e(\"src_components_ShoppingCart_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/ShoppingCart */ \"./src/components/ShoppingCart.tsx\")))));\n\t},\n\t\"./store\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_store_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/store */ \"./src/store/store.ts\")))));\n\t},\n\t\"./cartSlice\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_cartSlice_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/cartSlice */ \"./src/store/cartSlice.ts\")))));\n\t},\n\t\"./Routers\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_fortawesome_free-solid-svg-icons_fortawesome_free-solid-svg-i-ca294c\"), __webpack_require__.e(\"src_Routers_index_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/Routers */ \"./src/Routers/index.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://checkout/container_entry?");
+eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_fortawesome_free-solid-svg-icons_fortawesome_free-solid-svg-i-7b26b8\"), __webpack_require__.e(\"src_components_ShoppingCart_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/ShoppingCart */ \"./src/components/ShoppingCart.tsx\")))));\n\t},\n\t\"./store\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_store_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/store */ \"./src/store/store.ts\")))));\n\t},\n\t\"./cartSlice\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"src_store_cartSlice_ts\")]).then(() => (() => ((__webpack_require__(/*! ./src/store/cartSlice */ \"./src/store/cartSlice.ts\")))));\n\t},\n\t\"./Routers\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"vendors-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_fortawesome_free-solid-svg-icons_fortawesome_free-solid-svg-i-7b26b8\"), __webpack_require__.e(\"src_Routers_index_tsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/Routers */ \"./src/Routers/index.tsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://checkout/container_entry?");
 
 /***/ })
 
@@ -266,7 +266,6 @@ eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([
 /******/ 					register("react", "18.2.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ../../node_modules/react/index.js */ "../../node_modules/react/index.js"))))));
 /******/ 					register("redux-thunk", "3.1.0", () => (__webpack_require__.e("node_modules_redux-thunk_dist_redux-thunk_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/redux-thunk/dist/redux-thunk.mjs */ "../../node_modules/redux-thunk/dist/redux-thunk.mjs"))))));
 /******/ 					register("redux", "5.0.1", () => (__webpack_require__.e("vendors-node_modules_redux_dist_redux_mjs").then(() => (() => (__webpack_require__(/*! ../../node_modules/redux/dist/redux.mjs */ "../../node_modules/redux/dist/redux.mjs"))))));
-/******/ 					register("styled-components", "6.1.6", () => (Promise.all([__webpack_require__.e("vendors-node_modules_styled-components_dist_styled-components_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/styled-components/dist/styled-components.browser.esm.js */ "../../node_modules/styled-components/dist/styled-components.browser.esm.js"))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -444,7 +443,7 @@ eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([
 /******/ 			"webpack/sharing/consume/default/react-redux/react-redux": () => (loadStrictVersionCheckFallback("default", "react-redux", [1,9,0,4], () => (__webpack_require__.e("vendors-node_modules_react-redux_dist_react-redux_mjs").then(() => (() => (__webpack_require__(/*! react-redux */ "../../node_modules/react-redux/dist/react-redux.mjs"))))))),
 /******/ 			"webpack/sharing/consume/default/@fortawesome/free-solid-svg-icons/@fortawesome/free-solid-svg-icons": () => (loadStrictVersionCheckFallback("default", "@fortawesome/free-solid-svg-icons", [1,6,5,1], () => (__webpack_require__.e("vendors-node_modules_fortawesome_free-solid-svg-icons_index_mjs").then(() => (() => (__webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs"))))))),
 /******/ 			"webpack/sharing/consume/default/@fortawesome/react-fontawesome/@fortawesome/react-fontawesome": () => (loadStrictVersionCheckFallback("default", "@fortawesome/react-fontawesome", [2,0,2,0], () => (Promise.all([__webpack_require__.e("vendors-node_modules_fortawesome_react-fontawesome_index_es_js"), __webpack_require__.e("webpack_sharing_consume_default_fortawesome_fontawesome-svg-core_fortawesome_fontawesome-svg-core")]).then(() => (() => (__webpack_require__(/*! @fortawesome/react-fontawesome */ "../../node_modules/@fortawesome/react-fontawesome/index.es.js"))))))),
-/******/ 			"webpack/sharing/consume/default/styled-components/styled-components": () => (loadSingletonVersionCheckFallback("default", "styled-components", [1,6,1,3], () => (__webpack_require__.e("vendors-node_modules_styled-components_dist_styled-components_browser_esm_js").then(() => (() => (__webpack_require__(/*! styled-components */ "../../node_modules/styled-components/dist/styled-components.browser.esm.js")))))))
+/******/ 			"webpack/sharing/consume/default/styled-components": () => (loadSingletonVersionCheck("default", "styled-components", [1,6,1,3]))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
@@ -461,11 +460,11 @@ eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([
 /******/ 			"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit": [
 /******/ 				"webpack/sharing/consume/default/@reduxjs/toolkit/@reduxjs/toolkit"
 /******/ 			],
-/******/ 			"webpack_sharing_consume_default_fortawesome_free-solid-svg-icons_fortawesome_free-solid-svg-i-ca294c": [
+/******/ 			"webpack_sharing_consume_default_fortawesome_free-solid-svg-icons_fortawesome_free-solid-svg-i-7b26b8": [
 /******/ 				"webpack/sharing/consume/default/react-redux/react-redux",
 /******/ 				"webpack/sharing/consume/default/@fortawesome/free-solid-svg-icons/@fortawesome/free-solid-svg-icons",
 /******/ 				"webpack/sharing/consume/default/@fortawesome/react-fontawesome/@fortawesome/react-fontawesome",
-/******/ 				"webpack/sharing/consume/default/styled-components/styled-components"
+/******/ 				"webpack/sharing/consume/default/styled-components"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -517,7 +516,7 @@ eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_sharing_consume_default_(fortawesome_f(ontawesome\-svg\-core_fortawesome_fontawesome\-svg\-core|ree\-solid\-svg\-icons_fortawesome_free\-solid\-svg\-i\-ca294c)|re(dux(\-thunk_redux\-thunk\-webpack_sharing_consume_default_redux_redux|js_toolkit_reduxjs_toolkit)|act_react))$/.test(chunkId)) {
+/******/ 						if(!/^webpack_sharing_consume_default_(fortawesome_f(ontawesome\-svg\-core_fortawesome_fontawesome\-svg\-core|ree\-solid\-svg\-icons_fortawesome_free\-solid\-svg\-i\-7b26b8)|re(dux(\-thunk_redux\-thunk\-webpack_sharing_consume_default_redux_redux|js_toolkit_reduxjs_toolkit)|act_react))$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -587,11 +586,6 @@ eval("var moduleMap = {\n\t\"./ShoppingCart\": () => {\n\t\treturn Promise.all([
 /******/ 		var chunkLoadingGlobal = self["webpackChunkcheckout"] = self["webpackChunkcheckout"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

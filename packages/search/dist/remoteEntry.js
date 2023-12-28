@@ -341,7 +341,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				case "default": {
 /******/ 					register("react-dom", "18.2.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-dom/index.js */ "../../node_modules/react-dom/index.js"))))));
 /******/ 					register("react", "18.2.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ../../node_modules/react/index.js */ "../../node_modules/react/index.js"))))));
-/******/ 					register("styled-components", "6.1.6", () => (Promise.all([__webpack_require__.e("vendors-node_modules_styled-components_dist_styled-components_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/styled-components/dist/styled-components.browser.esm.js */ "../../node_modules/styled-components/dist/styled-components.browser.esm.js"))))));
 /******/ 					initExternal("webpack/container/reference/checkout");
 /******/ 				}
 /******/ 				break;
@@ -513,7 +512,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersionCheckFallback("default", "react", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "../../node_modules/react/index.js"))))))),
-/******/ 			"webpack/sharing/consume/default/styled-components/styled-components": () => (loadSingletonVersionCheckFallback("default", "styled-components", [1,6,1,3], () => (__webpack_require__.e("vendors-node_modules_styled-components_dist_styled-components_browser_esm_js").then(() => (() => (__webpack_require__(/*! styled-components */ "../../node_modules/styled-components/dist/styled-components.browser.esm.js")))))))
+/******/ 			"webpack/sharing/consume/default/styled-components": () => (loadSingletonVersionCheck("default", "styled-components", [1,6,1,3]))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
@@ -521,7 +520,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				"webpack/sharing/consume/default/react/react"
 /******/ 			],
 /******/ 			"src_components_SearchContent_tsx": [
-/******/ 				"webpack/sharing/consume/default/styled-components/styled-components"
+/******/ 				"webpack/sharing/consume/default/styled-components"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -643,11 +642,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 		var chunkLoadingGlobal = self["webpackChunksearch"] = self["webpackChunksearch"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
