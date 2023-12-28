@@ -267,9 +267,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			"src_bootstrap_tsx": [
 /******/ 				"webpack/container/remote/checkout/store",
 /******/ 				"webpack/container/remote/search/Routers"
-/******/ 			],
-/******/ 			"webpack_container_remote_search_Search": [
-/******/ 				"webpack/container/remote/search/Search"
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
@@ -281,11 +278,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			"webpack/container/remote/search/Routers": [
 /******/ 				"default",
 /******/ 				"./Routers",
-/******/ 				"webpack/container/reference/search"
-/******/ 			],
-/******/ 			"webpack/container/remote/search/Search": [
-/******/ 				"default",
-/******/ 				"./Search",
 /******/ 				"webpack/container/reference/search"
 /******/ 			]
 /******/ 		};
@@ -376,7 +368,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			switch(name) {
 /******/ 				case "default": {
 /******/ 					register("react-dom", "18.2.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-dom/index.js */ "../../node_modules/react-dom/index.js"))))));
-/******/ 					register("react-query", "3.39.3", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-query_es_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-query/es/index.js */ "../../node_modules/react-query/es/index.js"))))));
 /******/ 					register("react-redux", "9.0.4", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-redux_dist_react-redux_mjs"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-redux/dist/react-redux.mjs */ "../../node_modules/react-redux/dist/react-redux.mjs"))))));
 /******/ 					register("react-router-dom", "6.21.1", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-router-dom_dist_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => (() => (__webpack_require__(/*! ../../node_modules/react-router-dom/dist/index.js */ "../../node_modules/react-router-dom/dist/index.js"))))));
 /******/ 					register("react", "18.2.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ../../node_modules/react/index.js */ "../../node_modules/react/index.js"))))));
@@ -555,7 +546,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersionCheckFallback("default", "react", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "../../node_modules/react/index.js"))))))),
 /******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadSingletonVersionCheckFallback("default", "react-dom", [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "../../node_modules/react-dom/index.js"))))))),
 /******/ 			"webpack/sharing/consume/default/react-redux/react-redux": () => (loadStrictVersionCheckFallback("default", "react-redux", [1,9,0,4], () => (__webpack_require__.e("vendors-node_modules_react-redux_dist_react-redux_mjs").then(() => (() => (__webpack_require__(/*! react-redux */ "../../node_modules/react-redux/dist/react-redux.mjs"))))))),
-/******/ 			"webpack/sharing/consume/default/react-query/react-query": () => (loadStrictVersionCheckFallback("default", "react-query", [1,3,39,3], () => (__webpack_require__.e("vendors-node_modules_react-query_es_index_js").then(() => (() => (__webpack_require__(/*! react-query */ "../../node_modules/react-query/es/index.js"))))))),
 /******/ 			"webpack/sharing/consume/default/react-router-dom/react-router-dom": () => (loadStrictVersionCheckFallback("default", "react-router-dom", [4,6,21,1], () => (__webpack_require__.e("vendors-node_modules_react-router-dom_dist_index_js").then(() => (() => (__webpack_require__(/*! react-router-dom */ "../../node_modules/react-router-dom/dist/index.js"))))))),
 /******/ 			"webpack/sharing/consume/default/styled-components/styled-components": () => (loadSingletonVersionCheckFallback("default", "styled-components", [1,6,1,3], () => (__webpack_require__.e("vendors-node_modules_styled-components_dist_styled-components_browser_esm_js").then(() => (() => (__webpack_require__(/*! styled-components */ "../../node_modules/styled-components/dist/styled-components.browser.esm.js")))))))
 /******/ 		};
@@ -569,7 +559,6 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			],
 /******/ 			"src_bootstrap_tsx": [
 /******/ 				"webpack/sharing/consume/default/react-redux/react-redux",
-/******/ 				"webpack/sharing/consume/default/react-query/react-query",
 /******/ 				"webpack/sharing/consume/default/react-router-dom/react-router-dom",
 /******/ 				"webpack/sharing/consume/default/styled-components/styled-components"
 /******/ 			]
@@ -623,7 +612,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_(sharing_consume_default_react(\-dom_react\-dom|_react)|container_remote_search_Search)$/.test(chunkId)) {
+/******/ 						if(!/^webpack_sharing_consume_default_react(\-dom_react\-dom|_react)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);

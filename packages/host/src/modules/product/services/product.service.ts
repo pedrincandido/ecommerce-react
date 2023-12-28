@@ -2,12 +2,35 @@
 
 import { mockPokemon } from "./pokemon";
 
-export const getProductById = (id: number | undefined): Promise<any> => {
+interface BaseStats {
+  HP: number;
+  Attack: number;
+  Defense: number;
+}
+
+export interface Pokemon {
+  id: number;
+  price: number;
+  name: {
+    english: string;
+  };
+  type: string[];
+  base: BaseStats;
+}
+
+const getPokemonPrice = (base: BaseStats): number => Math.round(Object.values(base).reduce((a, n) => a + n) / 6);
+
+const pokemonWithPrices = mockPokemon.map((p) => ({
+  ...p,
+  price: getPokemonPrice(p.base),
+}));
+
+export const getProductById = (idProduct: number | undefined): Promise<any> => {
   return new Promise<Response>((resolve) => {
     setTimeout(() => {
-      if (id) {
+      if (idProduct) {
         resolve(
-          new Response(JSON.stringify(mockPokemon), {
+          new Response(JSON.stringify(pokemonWithPrices.find(({ id }) => id === idProduct) || null), {
             status: 200,
             headers: {
               "Content-Type": "application/json",

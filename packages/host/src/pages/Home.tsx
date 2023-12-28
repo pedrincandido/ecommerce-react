@@ -1,69 +1,47 @@
-import React from "react";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { RootState } from "@mf-types/checkout/store";
+import { Link, Outlet } from "react-router-dom";
 import { StyledContainer, StyledNav, StyledNavbar } from "./styles";
+import { useSelector } from "react-redux";
 
-// const Home = React.lazy(() => import("home/Home"));
-const Search = React.lazy(() => import("search/Search"));
-// const Checkout = React.lazy(() => import("checkout/Checkout"));
+const selectTotalQuantity = (state: RootState) => {
+  return state.cart.items.reduce((total, item) => total + item.quantity, 0);
+};
 
-const HomeRoute = () => <React.Suspense fallback={<div />}>{/* <Home /> */}</React.Suspense>;
-const SearchRoute = () => (
-  <React.Suspense fallback={<div />}>
-    <Search />
-  </React.Suspense>
-);
-const CheckoutRoute = () => <React.Suspense fallback={<div />}>{/* <Checkout /> */}</React.Suspense>;
+const RootLayout = () => {
+  const totalQuantity = useSelector(selectTotalQuantity);
 
-const Home = ({ items = [], page = "home" }) => (
-  <StyledContainer>
-    <StyledNavbar>
-      {/* <Navbar.Brand>
-          <Link to="/" style={{ color: "white" }}>
-            Pokeshop
+  return (
+    <StyledContainer>
+      <StyledNavbar>
+        <StyledNav className="mr-auto">
+          <div>
+            <Link to="/" style={{ color: "white" }}>
+              Home
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/search" style={{ color: "white" }}>
+              Search
+            </Link>
+          </div>
+        </StyledNav>
+        <div>
+          <Link
+            to="/checkout"
+            style={{
+              paddingLeft: 10,
+              paddingBottom: 15,
+            }}
+          >
+            <span style={{ color: "white", fontWeight: "bold", paddingLeft: 5 }}>{totalQuantity}</span>
           </Link>
-        </Navbar.Brand> */}
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-      {/* <Navbar.Collapse id="basic-navbar-nav"> */}
-      <StyledNav className="mr-auto">
-        {/* <Nav.Link> */}
-        <Link to="/" style={{ color: "white" }}>
-          Home
-        </Link>
-        {/* </Nav.Link> */}
-        {/* <Nav.Link> */}
-        <Link to="/search" style={{ color: "white" }}>
-          Search
-        </Link>
-        {/* </Nav.Link> */}
-      </StyledNav>
-      <Link
-        to="/checkout"
-        style={{
-          paddingLeft: 10,
-          paddingBottom: 15,
-        }}
-      >
-        {/* <Cart color="white" size={30} /> */}
-        <span style={{ color: "white", fontWeight: "bold", paddingLeft: 5 }}>
-          {items.reduce((a, { count }) => a + count, 0)}
-        </span>
-      </Link>
-      {/* </Navbar.Collapse> */}
-    </StyledNavbar>
-    {/* <StyledContainer>
-        <Routes>
-          <Route path="/">
-            <HomeRoute />
-          </Route>
-          <Route path="/search">
-            <SearchRoute />
-          </Route>
-          <Route path="/checkout">
-            <CheckoutRoute />
-          </Route>
-        </Routes>
-      </StyledContainer> */}
-  </StyledContainer>
-);
+        </div>
+      </StyledNavbar>
 
-export default Home;
+      <Outlet />
+    </StyledContainer>
+  );
+};
+
+export default RootLayout;

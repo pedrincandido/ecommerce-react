@@ -1,17 +1,17 @@
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addItem } from "checkout/cartSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchPokemon } from "../services/product.service";
-import { CardImage, Col, Row, StyledCard, StyledCardBody, StyledCardText, StyledCardTitle } from "../styles/styles";
+import { pokemonWithPrices, searchPokemon } from "../services/product.service";
+import { Col, Row, StyledCard, StyledCardBody, StyledCardText, StyledCardTitle } from "../styles/styles";
 import CustomFormControl from "./CustomFormControl/CustomFormControl";
-import { mockPokemon } from "../services/pokemon";
+import { StyledButton } from "./styles";
 
 const SearchContent = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
-  const [products, setProducts] = useState(mockPokemon);
-
-  console.log(products);
+  const [products, setProducts] = useState(pokemonWithPrices);
 
   useEffect(() => {
     const doSearch = async () => {
@@ -19,16 +19,16 @@ const SearchContent = () => {
         try {
           const response = await searchPokemon(search);
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           const results = await response.json();
           setProducts(results);
         } catch (error) {
           console.error("Failed to fetch products:", error);
-          setProducts(mockPokemon);
+          setProducts(pokemonWithPrices);
         }
       } else {
-        setProducts(mockPokemon);
+        setProducts(pokemonWithPrices);
       }
     };
 
@@ -74,9 +74,9 @@ const SearchContent = () => {
               <Row>
                 <Col xs={4}>${product.price}</Col>
                 <Col xs={8}>
-                  <button onClick={() => handleAddItem(product)} style={{ width: "100%" }}>
-                    Add To Cart
-                  </button>
+                  <StyledButton onClick={() => handleAddItem(product)}>
+                    <FontAwesomeIcon icon={faShoppingCart} /> Add To Cart
+                  </StyledButton>
                 </Col>
               </Row>
             </StyledCardBody>

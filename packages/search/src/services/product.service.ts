@@ -17,7 +17,7 @@ interface Pokemon {
 
 const getPokemonPrice = (base: BaseStats): number => Math.round(Object.values(base).reduce((a, n) => a + n) / 6);
 
-const pokemonWithPrices = mockPokemon.map((p) => ({
+export const pokemonWithPrices = mockPokemon.map((p) => ({
   ...p,
   price: getPokemonPrice(p.base),
 }));

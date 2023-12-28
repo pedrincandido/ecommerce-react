@@ -1,25 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ProductCardProps } from "./interfaces/product-card.interface";
 // import { getImage } from "./services/product.service";
-import { useQuery } from "@tanstack/react-query";
-import { getProductById } from "./services/product.service";
+import { Pokemon, getProductById } from "./services/product.service";
 import { Col, Row } from "./styles/styles";
 
 export const ProductCard = ({ id, children, right }: ProductCardProps) => {
-  // const { product, setProductId } = useProduct();
+  const [product, setProduct] = useState<Pokemon>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const { data: product } = useQuery({
-    queryKey: ["getProductById", id],
-    queryFn: () => getProductById(id),
-  });
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await getProductById(id);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setProduct(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  // const { data: product } = useQuery(["getProductById", id], () => getProductById(id));
+    if (id) {
+      fetchProduct();
+    }
+  }, [id]);
 
-  // useEffect(() => {
-  //   if (id) {
-  //     setProductId(id);
-  //   }
-  // }, [id, setProductId]);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div
@@ -31,15 +45,14 @@ export const ProductCard = ({ id, children, right }: ProductCardProps) => {
       }}
     >
       <Row>
-        {/* {product && ( */}
-        {/* <> */}
+
         {!right && <Col xs={3}>{/* <img src={getImage(product)} style={{ width: "100%" }} /> */}</Col>}
         <Col xs={9}>
-          <h1>{product.name.english}</h1>
+          <h1>{product?.name.english}</h1>
           {children}
           <Row>
             <Col xs={5} style={{ fontWeight: "bold" }}>
-              ${product.price}
+              ${product?.price}
             </Col>
             <Col xs={3}>
               <React.Suspense fallback={<span />}>{/* <AddToCart pokemon={product} /> */}</React.Suspense>
