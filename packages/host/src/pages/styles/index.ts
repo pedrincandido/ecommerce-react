@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
@@ -5,13 +6,28 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledNavbar = styled.nav`
-  background-color: #333; // Example style
-  // Other custom styles
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 56px;
 `;
 
 export const StyledNav = styled.div`
+  display: flex;
+  gap: 20px;
 
+
+  > div {
+    color: white;
+  }
 `;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+`
+
 // export const StyledNavbarBrand = styled(Navbar.Brand)`
 //   color: white; // Example style
 //   // Other custom styles

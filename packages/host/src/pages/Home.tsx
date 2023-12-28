@@ -1,7 +1,9 @@
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RootState } from "@mf-types/checkout/store";
-import { Link, Outlet } from "react-router-dom";
-import { StyledContainer, StyledNav, StyledNavbar } from "./styles";
 import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
+import { StyledContainer, StyledLink, StyledNav, StyledNavbar } from "./styles";
 
 const selectTotalQuantity = (state: RootState) => {
   return state.cart.items.reduce((total, item) => total + item.quantity, 0);
@@ -15,27 +17,28 @@ const RootLayout = () => {
       <StyledNavbar>
         <StyledNav className="mr-auto">
           <div>
-            <Link to="/" style={{ color: "white" }}>
+            <StyledLink to="/" style={{ color: "white" }}>
               Home
-            </Link>
+            </StyledLink>
           </div>
 
           <div>
-            <Link to="/search" style={{ color: "white" }}>
+            <StyledLink to="/search" style={{ color: "white" }}>
               Search
-            </Link>
+            </StyledLink>
           </div>
         </StyledNav>
         <div>
-          <Link
+          <StyledLink
             to="/checkout"
             style={{
               paddingLeft: 10,
               paddingBottom: 15,
             }}
           >
+            <FontAwesomeIcon style={{ color: "white" }} icon={faShoppingCart} />
             <span style={{ color: "white", fontWeight: "bold", paddingLeft: 5 }}>{totalQuantity}</span>
-          </Link>
+          </StyledLink>
         </div>
       </StyledNavbar>
 

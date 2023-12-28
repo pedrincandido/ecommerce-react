@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { ProductCardProps } from "./interfaces/product-card.interface";
 // import { getImage } from "./services/product.service";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
 import { Pokemon, getProductById } from "./services/product.service";
-import { Col, Row } from "./styles/styles";
+import { Col, Row, StyledButton } from "./styles/styles";
+import { addItem } from "checkout/cartSlice";
 
 export const ProductCard = ({ id, children, right }: ProductCardProps) => {
+  const dispatch = useDispatch();
   const [product, setProduct] = useState<Pokemon>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -35,6 +40,10 @@ export const ProductCard = ({ id, children, right }: ProductCardProps) => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
+  const handleAddItem = (item: any) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div
       style={{
@@ -42,10 +51,10 @@ export const ProductCard = ({ id, children, right }: ProductCardProps) => {
         padding: "1em",
         border: "1px solid #ccc",
         borderRadius: 5,
+        width: 200
       }}
     >
       <Row>
-
         {!right && <Col xs={3}>{/* <img src={getImage(product)} style={{ width: "100%" }} /> */}</Col>}
         <Col xs={9}>
           <h1>{product?.name.english}</h1>
@@ -59,6 +68,10 @@ export const ProductCard = ({ id, children, right }: ProductCardProps) => {
             </Col>
           </Row>
         </Col>
+        <StyledButton onClick={() => handleAddItem(product)}>
+          <FontAwesomeIcon icon={faShoppingCart} /> Add To Cart
+        </StyledButton>
+
         {right && <Col xs={3}>{/* <img src={getImage(product)} style={{ width: "100%" }} /> */}</Col>}
         {/* </> */}
         {/* )} */}

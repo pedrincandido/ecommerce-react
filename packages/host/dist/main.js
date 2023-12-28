@@ -16,7 +16,7 @@
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_react-dom_client_js-node_modules_react_jsx-runtime_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-dom_react-dom\"), __webpack_require__.e(\"src_bootstrap_tsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.tsx\"));\n\n\n\n//# sourceURL=webpack://host/./src/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_fortawesome_react-fontawesome_index_es_js-node_modules_react-dom_client_-ad5345\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-dom_react-dom\"), __webpack_require__.e(\"src_bootstrap_tsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.tsx\"));\n\n\n\n//# sourceURL=webpack://host/./src/index.tsx?");
 
 /***/ }),
 
@@ -266,6 +266,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 		var chunkMapping = {
 /******/ 			"src_bootstrap_tsx": [
 /******/ 				"webpack/container/remote/checkout/store",
+/******/ 				"webpack/container/remote/checkout/cartSlice",
 /******/ 				"webpack/container/remote/search/Routers"
 /******/ 			]
 /******/ 		};
@@ -273,6 +274,11 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			"webpack/container/remote/checkout/store": [
 /******/ 				"default",
 /******/ 				"./store",
+/******/ 				"webpack/container/reference/checkout"
+/******/ 			],
+/******/ 			"webpack/container/remote/checkout/cartSlice": [
+/******/ 				"default",
+/******/ 				"./cartSlice",
 /******/ 				"webpack/container/reference/checkout"
 /******/ 			],
 /******/ 			"webpack/container/remote/search/Routers": [
