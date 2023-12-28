@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { ProductCardProps } from "../interfaces/product-card.interface";
-// import { getImage } from "./services/product.service";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addItem } from "checkout/cartSlice";
@@ -57,31 +56,5 @@ export const ProductCard = ({ id, children, right }: ProductCardProps) => {
         </StyledButton>
       </CardFooter>
     </Card>
-
-    // <div
-    //   style={{
-    //     marginTop: "1em",
-    //     padding: "1em",
-    //     border: "1px solid #ccc",
-    //     borderRadius: 5,
-    //     width: 350,
-    //     height: '100%',
-    //   }}
-    // >
-    //   <Row>
-    //     <Col xs={9}>
-    //       <h1>{product?.name.english}</h1>
-    //       {children}
-    //       <Row>
-    //         <Col xs={5} style={{ fontWeight: "bold" }}>
-    //           ${product?.price}
-    //         </Col>
-    //       </Row>
-    //     </Col>
-    //     <StyledButton onClick={() => handleAddItem(product)}>
-    //       <FontAwesomeIcon icon={faShoppingCart} /> Add To Cart
-    //     </StyledButton>
-    //   </Row>
-    // </div>
   );
 };
